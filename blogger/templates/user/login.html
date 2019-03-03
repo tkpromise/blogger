@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<div class='card mt-4'>
+    <div class='card-header'>
+        Login
+    </div>
+
+    <div class='card-body'>
+        {% from '_formhelpers.html' import render_field %}
+        <form methods='post' action=''>
+            {{ form.csrf_token }}
+            {{ render_field(form.email, class='form-control') }}
+            {{ render_field(form.password, class='form-control') }}
+            {{ form.submit(clas='btn btn-outline-secondary') }}
+        </form>
+        
+    </div>
+</div>
+{% endblock %}
